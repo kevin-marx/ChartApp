@@ -52,9 +52,12 @@ func displayChart(chartBar: BarChartView, dataList: Array<Double>) {
 }
 
 func getYVals() -> Array<Double> {
-    var values: Array<Double>
-    for i in 0...99 {
-        values.insert(Double(sin(Double(i)/Double(values) * 2 * Double.pi)), at: 0)
+    var values: Array<Double> = []
+    let max = 99
+    for i in 0...max {
+        let TAU = 2 * Double.pi
+        let val:Double = sin(Double(i)/Double(max) * TAU)
+        values.insert(val, at: 0)
     }
     
     return values
